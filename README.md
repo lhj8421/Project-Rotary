@@ -58,9 +58,8 @@
 - **CW (시계방향)**: 값 증가
 - **CCW (반시계방향)**: 값 감소
 
-**상태 흐름**
-SCREEN_NORMAL
-TIME_EDIT_MODE → EDIT_YEAR →  EDIT_MONTH → EDIT_DAY → EDIT_HOUR → EDIT_MINUTE → EDIT_SECOND → SCREEN_NORMAL
+**상태 흐름**  
+SCREEN_NORMAL → TIME_EDIT_MODE → EDIT_YEAR →  EDIT_MONTH → EDIT_DAY → EDIT_HOUR → EDIT_MINUTE → EDIT_SECOND → SCREEN_NORMAL
               click
 
 **편집 과정**
