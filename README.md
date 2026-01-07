@@ -19,5 +19,56 @@
 ### 🏗️ 전체 시스템 구조
 <img width="951" height="523" alt="스크린샷 2026-01-07 104811" src="https://github.com/user-attachments/assets/a93c304b-dcb9-450b-9448-0a5df7b16f20" />
 
+
+## 3. 멀티스레드 데이터 수집
+
+> ### **중앙 집중식 데이터 관리를 통한 안정적인 동기화**
+**계층 구조**
+- **Application Layer**: 멀티스레드 기반 센서 데이터 수집
+- **Kernel Layer**: 4개의 커널 드라이버 모듈
+  - `oled.ko` - I2C 기반 SSD1306 제어
+  - `dht11.ko` - GPIO 기반 온습도 센서
+  - `ds1302.ko` - GPIO 기반 RTC
+  - `rotary.ko` - GPIO 기반 로터리 엔코더
+- **Hardware Layer**: I2C/GPIO 컨트롤러를 통한 하드웨어 제어
+
 **동작 원리 :**
 센서 스레드 → read() → parse → Shared_data_t → OLED 출력
+
+**각 스레드 역할**
+- **DS1302 Thread**: `/dev/ds1302` → 시간 정보 읽기
+- **DHT11 Thread**: `/dev/dht11` → 온습도 정보 읽기
+- **Rotary Thread**: `/dev/rotary` → 사용자 입력 감지
+- **OLED Thread**: 공유 데이터 → `/dev/oled` → 화면 출력
+
+## 4. FSM 기반 시간 편집 모드
+
+> ### **Rotary Encoder 3가지 입력으로 직관적인 UI 구현**
+
+### 🎛️ 상태 전이 다이어그램
+
+**입력 이벤트**
+- **CLICK**: 다음 필드로 이동
+- **CW (시계방향)**: 값 증가
+- **CCW (반시계방향)**: 값 감소
+
+**상태 흐름**
+SCREEN_NORMAL
+    ↓ CLICK
+TIME_EDIT_MODE
+    ↓
+EDIT_YEAR → EDIT_MONTH → EDIT_DAY 
+    ↓           ↓           ↓
+EDIT_HOUR → EDIT_MINUTE → EDIT_SECOND
+    ↓
+SCREEN_NORMAL
+
+
+**편집 과정**
+1. 정상 화면에서 CLICK → 편집 모드 진입
+2. CW/CCW로 현재 필드 값 조정
+3. CLICK으로 다음 필드 이동
+4. 마지막 필드(초) 편집 완료 후 자동 복귀
+
+---
+
