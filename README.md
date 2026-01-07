@@ -19,5 +19,5 @@
 ### 🏗️ 전체 시스템 구조
 <img width="951" height="523" alt="스크린샷 2026-01-07 104811" src="https://github.com/user-attachments/assets/a93c304b-dcb9-450b-9448-0a5df7b16f20" />
 
-**동작 원리**
+**동작 원리 :**
 센서 스레드 → read() → parse → Shared_data_t → OLED 출력
