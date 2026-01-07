@@ -68,5 +68,17 @@ SCREEN_NORMAL → TIME_EDIT_MODE → EDIT_YEAR →  EDIT_MONTH → EDIT_DAY → 
 3. CLICK으로 다음 필드 이동
 4. 마지막 필드(초) 편집 완료 후 자동 복귀
 
----
+
+
+## 6. 하드웨어 구성
+
+> ### **실제 구현 및 연결**
+
+> ### 📸 실제 동작 모습
+<img width="695" height="338" alt="스크린샷 2026-01-07 093118" src="https://github.com/user-attachments/assets/76a4e05c-00c2-4804-96b1-2a391cf64d0a" />
+
+### 🔌 핀 연결도
+<img width="942" height="529" alt="스크린샷 2026-01-07 104756" src="https://github.com/user-attachments/assets/b8673759-36e0-4a82-a0a3-3daee0ffae88" />
+
+
 
