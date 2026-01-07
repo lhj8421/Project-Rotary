@@ -23,6 +23,12 @@
 ## 3. 멀티스레드 데이터 수집
 
 > ### **중앙 집중식 데이터 관리를 통한 안정적인 동기화**
+
+### 🔄 Application 내부 구조
+
+<img width="934" height="520" alt="스크린샷 2026-01-07 105046" src="https://github.com/user-attachments/assets/b9b427b5-b804-4f62-a247-7ddcb038ee79" />
+
+> ### **중앙 집중식 데이터 관리를 통한 안정적인 동기화**
 **계층 구조**
 - **Application Layer**: 멀티스레드 기반 센서 데이터 수집
 - **Kernel Layer**: 4개의 커널 드라이버 모듈
@@ -54,15 +60,8 @@
 
 **상태 흐름**
 SCREEN_NORMAL
-    ↓ CLICK
-TIME_EDIT_MODE
-    ↓
-EDIT_YEAR → EDIT_MONTH → EDIT_DAY 
-    ↓           ↓           ↓
-EDIT_HOUR → EDIT_MINUTE → EDIT_SECOND
-    ↓
-SCREEN_NORMAL
-
+TIME_EDIT_MODE → EDIT_YEAR →  EDIT_MONTH → EDIT_DAY → EDIT_HOUR → EDIT_MINUTE → EDIT_SECOND → SCREEN_NORMAL
+              click
 
 **편집 과정**
 1. 정상 화면에서 CLICK → 편집 모드 진입
