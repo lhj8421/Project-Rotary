@@ -59,8 +59,8 @@
 - **CCW (반시계방향)**: 값 감소
 
 **상태 흐름**  
-SCREEN_NORMAL → TIME_EDIT_MODE → EDIT_YEAR →  EDIT_MONTH → EDIT_DAY → EDIT_HOUR → EDIT_MINUTE → EDIT_SECOND → SCREEN_NORMAL
-              click
+<img width="942" height="515" alt="image" src="https://github.com/user-attachments/assets/98cdec48-ad19-4c6a-958a-bd8b496e422b" />
+
 
 **편집 과정**
 1. 정상 화면에서 CLICK → 편집 모드 진입
