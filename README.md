@@ -18,14 +18,24 @@
 **개발 기간**: 2025.12.24 ~ 2025.12.29  
 **개발 환경**: Raspberry Pi / Linux Kernel Driver / C / Multithreading  
 
+## 2. 하드웨어 구성
+
+> ### **실제 구현 및 연결**
+
+> ### 📸 실제 동작 모습
+<img width="695" height="338" alt="스크린샷 2026-01-07 093118" src="https://github.com/user-attachments/assets/76a4e05c-00c2-4804-96b1-2a391cf64d0a" />
+
+### 🔌 핀 연결도
+<img width="942" height="529" alt="스크린샷 2026-01-07 104756" src="https://github.com/user-attachments/assets/b8673759-36e0-4a82-a0a3-3daee0ffae88" />
 
 
-## 2. 시스템 아키텍처
+
+## 3. 시스템 아키텍처
 ### 🏗️ 전체 시스템 구조
 <img width="951" height="523" alt="스크린샷 2026-01-07 104811" src="https://github.com/user-attachments/assets/a93c304b-dcb9-450b-9448-0a5df7b16f20" />
 
 
-## 3. 멀티스레드 데이터 수집
+## 4. 멀티스레드 데이터 수집
 
 > ### **중앙 집중식 데이터 관리를 통한 안정적인 동기화**
 
@@ -52,7 +62,7 @@
 - **Rotary Thread**: `/dev/rotary` → 사용자 입력 감지
 - **OLED Thread**: 공유 데이터 → `/dev/oled` → 화면 출력
 
-## 4. FSM 기반 시간 편집 모드
+## 5. FSM 기반 시간 편집 모드
 
 > ### **Rotary Encoder 3가지 입력으로 직관적인 UI 구현**
 
@@ -73,17 +83,6 @@
 3. CLICK으로 다음 필드 이동
 4. 마지막 필드(초) 편집 완료 후 자동 복귀
 
-
-
-## 6. 하드웨어 구성
-
-> ### **실제 구현 및 연결**
-
-> ### 📸 실제 동작 모습
-<img width="695" height="338" alt="스크린샷 2026-01-07 093118" src="https://github.com/user-attachments/assets/76a4e05c-00c2-4804-96b1-2a391cf64d0a" />
-
-### 🔌 핀 연결도
-<img width="942" height="529" alt="스크린샷 2026-01-07 104756" src="https://github.com/user-attachments/assets/b8673759-36e0-4a82-a0a3-3daee0ffae88" />
 
 
 
