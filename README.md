@@ -10,7 +10,7 @@
 - **직관적인 시간 편집 UI (Rotary Encoder + FSM)**
 - **OLED 실시간 데이터 시각화**
 
-**개발 기간**: 2025.12.24 ~ 2025.12.29
+**개발 기간**: 2025.12.24 ~ 2025.12.29  
 **개발 환경**: Raspberry Pi / Linux Kernel Driver / C / Multithreading  
 
 
